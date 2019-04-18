@@ -79,12 +79,12 @@
   var loadOrExport = function () {
     collectCards();
     
-    var $more = $("a:contains('LOAD MORE')");
-    if ($more.length == 1) {
+    //var $more = $("a:contains('LOAD MORE')");
+    //if ($more.length == 1) {
       // no more load button
       doExport();
       return;
-    }
+    //}
     
     console.log('expanding page');
     var evt = new Event("click", { "bubbles": true, "cancelable": true });
