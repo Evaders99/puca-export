@@ -31,7 +31,7 @@
       var card = {
         cardName: $card.find('a[data-card_id]').text(),
         setName: $card.find('.set select option:selected').text(),
-        isTradable: tradableMap[$card.find('.trade .btn-tab').hasClass('active-button-2')],
+        //isTradable: tradableMap[$card.find('.trade .btn-tab').hasClass('active-button-2')],
         isFoil: $card.find('.foil select option:selected').val(),
         language: $card.find('.language select option:selected').text(),
         condition: conditionMap[$card.find('.condition select option:selected').text()]
@@ -57,7 +57,7 @@
       var card = group[0];
       var quantity = group.length;
       group.length = 0; // a bit of cleanup
-      var row = [quantity, quote(card.cardName), quote(card.setName), card.condition, card.language, card.isFoil, '', card.isTradable];
+      var row = [quantity, quote(card.cardName), quote(card.setName), card.condition, card.language, card.isFoil, ''];
       csv.push(row.join(',') + '\n');
     }
 
@@ -66,7 +66,7 @@
     $('<a/>', {
       href: URL.createObjectURL(blob),
       class: 'btn',
-      download: 'Pucatrade Haves ' + (new Date()) + '.csv'
+      download: 'Pucatrade Wants ' + (new Date()) + '.csv'
     }).css({
       position: 'fixed',
       left: '20px',
